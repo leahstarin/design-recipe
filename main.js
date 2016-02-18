@@ -33,5 +33,14 @@
  console.log(cheapItems);
 
 
+var singleItem = items.filter(function(item){
+  if (item.currency_code == 'GBP') {
+    return true;
+  }else {
+    return false;
+  }
+});
+
+console.log(singleItem[0].title + 'costs £' + singleItem[0].price);
 
 })();
