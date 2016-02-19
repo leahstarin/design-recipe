@@ -32,7 +32,7 @@
  console.log("Items that cost between $14.00 USD and $18.00 USD:");
  console.log(cheapItems);
 
-
+// number #3
 var singleItem = items.filter(function(item){
   if (item.currency_code == 'GBP') {
     return true;
@@ -42,5 +42,41 @@ var singleItem = items.filter(function(item){
 });
 
 console.log(singleItem[0].title + 'costs £' + singleItem[0].price);
+
+
+
+// #4
+items.forEach(function(item){
+if (item.materials.indexOf('wood') >= 0) {
+console.log(item.title + ' is made of wood.');
+}else {
+}
+});
+
+
+
+items.filter(function(item){
+  if(item.materials.length >= 8){
+    console.log(item.title + 'has' + item.materials.length + 'materials:')
+    item.materials.forEach(function(i){
+    console.log(i)
+  })
+  }
+
+});
+
+
+var handMade =items.filter(function(item){
+ if(item.who_made == "i_did"){
+   return true;
+ }else {
+   return false;
+ }
+
+});
+console.log(handMade.length + " were made by their seller");
+
+
+
 
 })();
